@@ -1,0 +1,8 @@
+Description:
+    Generates a dry-validation contract
+
+Example:
+    rails generate validation Thing
+
+    This will create:
+        app/dry-validations/thing_validator.rb
