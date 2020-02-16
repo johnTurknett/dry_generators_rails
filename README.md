@@ -1,6 +1,9 @@
-# DryGeneratorsRails
+# Dry Generators Rails
 Dry Generator Rails brings dry-rb to Rails in a consistent 
 manner.
+
+This is a work in progress by a squishy human that makes mistakes and will 
+eventually die.
 
 ## Available Generators
 

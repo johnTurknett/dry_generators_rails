@@ -17,4 +17,16 @@ class Dry::Generators::ValidationGeneratorTest < Rails::Generators::TestCase
       run_generator([''])
     end
   end
+
+  test 'generates tests' do
+    path = Rails.root.join('test', 'dry', 'validators')
+    test = Dir.entries path
+    assert_includes(test, 'user_setting_validator_test.rb')
+  end
+
+  test 'generates specs' do
+    path = Rails.root.join('spec', 'dry', 'validators')
+    test = Dir.entries path
+    assert_includes(test, 'user_setting_validator_spec.rb')
+  end
 end
