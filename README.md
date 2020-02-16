@@ -8,6 +8,7 @@ eventually die.
 ## Available Generators
 
 - dry:validation
+- dry:struct
 
 ## Usage
 `rails g dry:validation User`
