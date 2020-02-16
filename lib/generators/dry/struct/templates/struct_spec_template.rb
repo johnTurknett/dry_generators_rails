@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.feature Validations::<%= @class_name %> do
+RSpec.feature <%= @class_name %> do
   pending "add some scenarios (or delete) #{__FILE__}"
 end

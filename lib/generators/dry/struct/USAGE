@@ -1,0 +1,8 @@
+Description:
+    Generates a dry-struct class.
+
+Example:
+    rails generate struct Thing
+
+    This will create:
+        app/dry/structs/thing.rb
