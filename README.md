@@ -9,6 +9,7 @@ eventually die.
 
 - dry:validation
 - dry:struct
+- dry:monad
 
 ## Usage
 `rails g dry:validation User`

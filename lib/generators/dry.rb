@@ -7,6 +7,7 @@ module Dry
 
       VALIDATIONS_PATH = File.join(DRY_PATH, 'validations').freeze
       STRUCTS_PATH = File.join(DRY_PATH, 'structs').freeze
+      MONADS_PATH = File.join(DRY_PATH, 'monads').freeze
     end
   end
 end
