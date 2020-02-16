@@ -19,4 +19,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "dry-validation"
   spec.add_development_dependency "dry-struct"
+  spec.add_development_dependency "dry-monads"
 end

@@ -1,0 +1,8 @@
+Description:
+    Generates a dry-monad class.
+
+Example:
+    rails generate monad Thing
+
+    This will create:
+        app/dry/monads/thing.rb
