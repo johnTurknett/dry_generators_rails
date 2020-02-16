@@ -1,14 +1,14 @@
 require 'test_helper'
-require 'generators/dry/validation/validation_generator'
+require 'generators/dry/struct/struct_generator'
 
-class Dry::Generators::ValidationGeneratorTest < Rails::Generators::TestCase
-  tests Dry::Generators::ValidationGenerator
+class Dry::Generators::StructGeneratorTest < Rails::Generators::TestCase
+  tests Dry::Generators::StructGenerator
   destination Rails.root.join('tmp/generators')
   setup :prepare_destination
 
   test 'runs successfully when name is provided' do
     assert_nothing_raised do
-      run_generator(['UserSetting'])
+      run_generator(['User'])
     end
   end
 
@@ -19,14 +19,14 @@ class Dry::Generators::ValidationGeneratorTest < Rails::Generators::TestCase
   end
 
   test 'generates tests' do
-    path = Rails.root.join('test', 'dry', 'validators')
+    path = Rails.root.join('test', 'dry', 'structs')
     test = Dir.entries path
-    assert_includes(test, 'user_setting_validator_test.rb')
+    assert_includes(test, 'user_test.rb')
   end
 
   test 'generates specs' do
-    path = Rails.root.join('spec', 'dry', 'validators')
+    path = Rails.root.join('spec', 'dry', 'structs')
     test = Dir.entries path
-    assert_includes(test, 'user_setting_validator_spec.rb')
+    assert_includes(test, 'user_spec.rb')
   end
 end
