@@ -1,0 +1,13 @@
+module Validations
+  class <%= file_name.camelize %> < Dry::Validation::Contract
+    params do
+      <% @fields.each do |field| %>
+        <% if field[:required] %>
+          <%= "required(:#{field[:name]}).value(:#{field[:type]})" %>
+        <% else %>
+          <%= "optional(:#{field[:name]}).value(:#{field[:type]})" %>
+        <% end %>
+      <% end %>
+    end
+ end
+end

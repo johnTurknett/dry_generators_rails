@@ -1,8 +1,19 @@
 Description:
     Generates a dry-validation contract
 
+    Accepts an Array of params.
+
+    A single param name defaults to an optional string [email]
+    A name name and type will be optional [age:integer]
+    A type must be specified to make it required [age:integer:required]
+    Any number of params can be supplied [age:integer:required, alive:boolean]
+
 Example:
     rails generate validation Thing
+    rails generate validation Thing --params email
+    rails generate validation Thing --params age:integer
+    rails generate validation Thing --params age:integer:required
+    rails generate validation Thing --params age:integer:required alive:boolean
 
     This will create:
         app/dry/validations/thing.rb

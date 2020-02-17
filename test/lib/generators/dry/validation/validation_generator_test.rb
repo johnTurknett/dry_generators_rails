@@ -18,6 +18,25 @@ class Dry::Generators::ValidationGeneratorTest < Rails::Generators::TestCase
     end
   end
 
+  test 'params are a string and optional by default' do
+    run_generator(['UserWithOptionalEmailString', '--params', 'email'])
+    content = File.read(File.join(
+      Dry::Generators::Base::VALIDATIONS_PATH,
+      'user_with_optional_email_string.rb'
+    ))
+    assert_match /optional\(:email\).value\(:string\)/, content
+  end
+
+  test 'params can be defined with a type and be required' do
+    run_generator(['UserWithRequiredAgeAndOptionalEmail', '--params', 'age:integer:required', 'email'])
+    content = File.read(File.join(
+      Dry::Generators::Base::VALIDATIONS_PATH,
+      'user_with_required_age_and_optional_email.rb'
+    ))
+    assert_match /optional\(:email\).value\(:string\)/, content
+    assert_match /required\(:age\).value\(:integer\)/, content
+  end
+
   test 'generates tests' do
     path = Rails.root.join('test', 'dry', 'validations')
     test = Dir.entries path
